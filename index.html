@@ -4,87 +4,368 @@
   <meta charset="utf-8" />
   <title>The Royal Jerk</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Crowned by accident. Unmoved by chaos." />
+  <meta name="description" content="Crowned by accident. Unmoved by chaos. Stay seated." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-<header class="topbar">
-  <div class="brand">
-    <div class="logo">👑</div>
-    <div>
-      <div class="name">THE ROYAL JERK</div>
-      <div class="tag">Crowned by accident • Unmoved by chaos</div>
+  <!-- Ambient cabin background -->
+  <div class="bg">
+    <div class="grain"></div>
+    <div class="glow g1"></div>
+    <div class="glow g2"></div>
+    <div class="glow g3"></div>
+  </div>
+
+  <header class="topbar">
+    <div class="brand">
+      <!-- Put your coin image in the same folder as these files -->
+      <img class="brandLogo" src="coin.jpg" alt="The Royal Jerk coin logo">
+      <div class="brandText">
+        <div class="brandName">THE ROYAL JERK</div>
+        <div class="brandTag">Crowned by accident • Unmoved by chaos</div>
+      </div>
     </div>
-  </div>
 
-  <nav>
-    <a class="btn ghost" href="#" id="xLink">X</a>
-    <a class="btn ghost" href="#" id="tgLink">Telegram</a>
-    <a class="btn" href="#" id="buyLink">Buy</a>
-  </nav>
-</header>
+    <nav class="nav">
+      <a class="navLink" href="#stats">Stats</a>
+      <a class="navLink" href="#chart">Chart</a>
+      <a class="navLink" href="#lore">Lore</a>
+      <a class="navLink" href="#buy">How to Buy</a>
+      <a class="btn ghost" id="xLink" href="#" rel="noreferrer">X</a>
+      <a class="btn ghost" id="tgLink" href="#" rel="noreferrer">Telegram</a>
+      <a class="btn" id="buyLink" href="#" rel="noreferrer">Buy</a>
+    </nav>
+  </header>
 
-<main class="wrap">
+  <main class="wrap">
 
-<section class="hero card">
-  <div class="pill">
-    <span class="dot"></span>
-    <span id="statusText">Waiting for launch…</span>
-  </div>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="heroLeft card">
+        <div class="pill">
+          <span class="dot" id="dot"></span>
+          <span id="statusText">Waiting for launch CA…</span>
+          <span class="sep">•</span>
+          <span class="mini" id="pairText">Pair: —</span>
+        </div>
 
-  <h1>Stay seated.<br><span class="muted">Let the world spiral.</span></h1>
+        <h1>
+          Stay seated.<br>
+          <span class="muted">Let the world spiral.</span>
+        </h1>
 
-  <p class="sub">
-    The Royal Jerk is for those who don’t flinch.
-    When the cabin gets loud, we get quieter.
-  </p>
+        <p class="sub">
+          The Royal Jerk is a community of unbothered holders.
+          When everything gets loud, we don’t flinch — we hold.
+        </p>
 
-  <div class="caBox">
-    <div class="caLabel">Contract Address</div>
-    <button id="copyCA" disabled>
-      <span id="caText">TBA</span>
-      <span class="copyHint">Copy</span>
-    </button>
-  </div>
+        <div class="caBox">
+          <div class="caTop">
+            <div>
+              <div class="caLabel">Contract Address</div>
+              <div class="caHelp" id="caHelp">Paste CA in script.js to go live.</div>
+            </div>
+            <div class="badge" id="chainBadge">Solana</div>
+          </div>
 
-  <div class="actions">
-    <a class="btn" id="chartLink" href="#">Chart</a>
-    <a class="btn ghost" href="#stats">Live Stats</a>
-  </div>
-</section>
+          <button class="caButton" id="copyCA" disabled>
+            <span class="mono" id="caText">TBA</span>
+            <span class="copyHint">Copy</span>
+          </button>
 
-<section id="stats" class="stats">
-  <div class="stat card">
-    <span>Price</span>
-    <strong id="price">—</strong>
-  </div>
-  <div class="stat card">
-    <span>Market Cap</span>
-    <strong id="mc">—</strong>
-  </div>
-  <div class="stat card">
-    <span>Liquidity</span>
-    <strong id="liq">—</strong>
-  </div>
-  <div class="stat card">
-    <span>24h Volume</span>
-    <strong id="vol">—</strong>
-  </div>
-</section>
+          <div class="heroButtons">
+            <a class="btn" id="chartLink" href="#" rel="noreferrer">Open Chart</a>
+            <a class="btn ghost" href="#stats">View Live Stats</a>
+          </div>
+        </div>
 
-<footer>
-  <div class="hr"></div>
-  <p class="footerText">
-    No roadmap. No reaction. No explanation.
-  </p>
-</footer>
+        <div class="quickGrid">
+          <div class="quick card2">
+            <div class="k">Price</div>
+            <div class="v" id="price">—</div>
+          </div>
+          <div class="quick card2">
+            <div class="k">Market Cap</div>
+            <div class="v" id="mc">—</div>
+          </div>
+          <div class="quick card2">
+            <div class="k">Liquidity</div>
+            <div class="v" id="liq">—</div>
+          </div>
+          <div class="quick card2">
+            <div class="k">24h Volume</div>
+            <div class="v" id="vol">—</div>
+          </div>
+        </div>
+      </div>
 
-</main>
+      <div class="heroRight">
+        <div class="card poster">
+          <div class="posterHeader">
+            <div class="posterTitle">THE ROYAL JERK</div>
+            <div class="posterSub">unbothered at altitude</div>
+          </div>
 
-<script src="script.js"></script>
+          <div class="posterBody">
+            <div class="posterLine">
+              <span class="pillTiny">No roadmap</span>
+              <span class="pillTiny">No reaction</span>
+              <span class="pillTiny">No explanation</span>
+            </div>
+
+            <div class="posterQuote">
+              “When the cabin loses it…<br>we don’t even look up.”
+            </div>
+
+            <div class="posterMeta">
+              <div class="metaItem">
+                <div class="k">24h Change</div>
+                <div class="v" id="chg24">—</div>
+              </div>
+              <div class="metaItem">
+                <div class="k">Buys / Sells (24h)</div>
+                <div class="v" id="bs24">—</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="posterFooter">
+            <div class="tiny muted2">Tip: add your banner image as background later if you want.</div>
+          </div>
+        </div>
+
+        <div class="card txCard">
+          <div class="txHead">
+            <div>
+              <div class="sectionTitle">Activity</div>
+              <div class="tiny muted2">Latest (placeholder until CA is live)</div>
+            </div>
+            <div class="badge soft" id="feedBadge">Feed</div>
+          </div>
+
+          <div class="txList" id="txList">
+            <div class="txRow">
+              <span class="txSide buy">BUY</span>
+              <span class="txAmt">—</span>
+              <span class="txTime">—</span>
+            </div>
+            <div class="txRow">
+              <span class="txSide sell">SELL</span>
+              <span class="txAmt">—</span>
+              <span class="txTime">—</span>
+            </div>
+            <div class="txRow">
+              <span class="txSide buy">BUY</span>
+              <span class="txAmt">—</span>
+              <span class="txTime">—</span>
+            </div>
+          </div>
+
+          <div class="tiny muted2">Once live, we’ll wire this to real txs if you want (optional).</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS SECTION -->
+    <section id="stats" class="section">
+      <div class="sectionHead">
+        <h2>Live Stats</h2>
+        <div class="tiny muted2">Auto-updates every 15s once CA is set.</div>
+      </div>
+
+      <div class="statsGrid">
+        <div class="stat card">
+          <div class="k">Price (USD)</div>
+          <div class="v big" id="price2">—</div>
+          <div class="tiny muted2" id="priceHint">—</div>
+        </div>
+
+        <div class="stat card">
+          <div class="k">Market Cap</div>
+          <div class="v big" id="mc2">—</div>
+          <div class="tiny muted2">FDV proxy from pair data</div>
+        </div>
+
+        <div class="stat card">
+          <div class="k">Liquidity</div>
+          <div class="v big" id="liq2">—</div>
+          <div class="tiny muted2">Pool liquidity (USD)</div>
+        </div>
+
+        <div class="stat card">
+          <div class="k">24h Volume</div>
+          <div class="v big" id="vol2">—</div>
+          <div class="tiny muted2">Dex volume (24h)</div>
+        </div>
+
+        <div class="stat card">
+          <div class="k">24h Change</div>
+          <div class="v big" id="chg24b">—</div>
+          <div class="tiny muted2">Price change (24h)</div>
+        </div>
+
+        <div class="stat card">
+          <div class="k">Buys / Sells (24h)</div>
+          <div class="v big" id="bs24b">—</div>
+          <div class="tiny muted2">Transactions count (24h)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHART -->
+    <section id="chart" class="section">
+      <div class="sectionHead">
+        <h2>Chart</h2>
+        <div class="tiny muted2">Once CA is set, this button goes to your live chart.</div>
+      </div>
+
+      <div class="card chartCard">
+        <div class="chartTop">
+          <div>
+            <div class="sectionTitle">Dexscreener</div>
+            <div class="tiny muted2" id="chartHint">Add CA to enable chart link.</div>
+          </div>
+          <a class="btn" id="chartLink2" href="#" rel="noreferrer">Open Chart</a>
+        </div>
+
+        <div class="chartEmbed">
+          <div class="embedPlaceholder">
+            <div class="embedTitle">Chart Embed Placeholder</div>
+            <div class="tiny muted2">If you want, I can swap this with a real embedded chart later.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LORE -->
+    <section id="lore" class="section">
+      <div class="sectionHead">
+        <h2>Lore</h2>
+        <div class="tiny muted2">Why we picked “the vibe.”</div>
+      </div>
+
+      <div class="twoCol">
+        <div class="card">
+          <div class="sectionTitle">The Unbothered King</div>
+          <p class="p">
+            Some people react. Some people perform. The Royal Jerk sits still.
+            Surrounded by noise, crowned by coincidence, he doesn’t flinch.
+            That’s the entire thesis: stay calm while everything else spirals.
+          </p>
+          <div class="callout">
+            <div class="calloutTitle">Community Rule #1</div>
+            <div class="tiny">If the cabin is loud, you get quieter.</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="sectionTitle">What we are</div>
+          <ul class="ul">
+            <li>⚡ A meme with a recognizable energy</li>
+            <li>🧊 A culture of calm holders</li>
+            <li>🛫 A flight crew that doesn’t panic</li>
+            <li>👀 A community-run project (no fake promises)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW TO BUY -->
+    <section id="buy" class="section">
+      <div class="sectionHead">
+        <h2>How to Buy</h2>
+        <div class="tiny muted2">We’ll keep it simple.</div>
+      </div>
+
+      <div class="steps">
+        <div class="card step">
+          <div class="stepNum">1</div>
+          <div>
+            <div class="sectionTitle">Get a wallet</div>
+            <div class="tiny muted2">Phantom (Solana) is the usual move.</div>
+          </div>
+        </div>
+
+        <div class="card step">
+          <div class="stepNum">2</div>
+          <div>
+            <div class="sectionTitle">Load SOL</div>
+            <div class="tiny muted2">Send SOL to your wallet address.</div>
+          </div>
+        </div>
+
+        <div class="card step">
+          <div class="stepNum">3</div>
+          <div>
+            <div class="sectionTitle">Swap</div>
+            <div class="tiny muted2">Use the Buy link (we’ll set it at launch).</div>
+          </div>
+        </div>
+
+        <div class="card step">
+          <div class="stepNum">4</div>
+          <div>
+            <div class="sectionTitle">Stay seated</div>
+            <div class="tiny muted2">The entire brand is not reacting.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+      <div class="sectionHead">
+        <h2>FAQ</h2>
+        <div class="tiny muted2">Quick answers.</div>
+      </div>
+
+      <div class="faq">
+        <details class="card">
+          <summary>When launch?</summary>
+          <p class="p">When you paste the CA into <span class="mono">script.js</span> and update your links. Then it’s live.</p>
+        </details>
+
+        <details class="card">
+          <summary>Is this community-run?</summary>
+          <p class="p">That’s the vibe. No fake roadmaps — just people building attention together.</p>
+        </details>
+
+        <details class="card">
+          <summary>Where is the contract address?</summary>
+          <p class="p">It shows at the top once you set <span class="mono">CONTRACT_ADDRESS</span>.</p>
+        </details>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="hr"></div>
+      <div class="footerInner">
+        <div class="footLeft">
+          <div class="brandMini">
+            <img class="brandLogo sm" src="coin.jpg" alt="">
+            <div>
+              <div class="brandName sm">THE ROYAL JERK</div>
+              <div class="tiny muted2">No roadmap • No reaction</div>
+            </div>
+          </div>
+        </div>
+        <div class="footRight">
+          <a class="navLink" href="#lore">Lore</a>
+          <a class="navLink" href="#buy">Buy</a>
+          <a class="navLink" href="#chart">Chart</a>
+        </div>
+      </div>
+      <div class="tiny muted2 center">© <span id="year"></span> The Royal Jerk — community vibes only.</div>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
