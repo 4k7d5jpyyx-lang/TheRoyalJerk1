@@ -1,0 +1,158 @@
+:root{
+  --bg0:#0f1020;
+  --bg1:#1c1e3a;
+  --bg2:#2a2d56;
+
+  --glow1:#ffcfb3;
+  --glow2:#f6b7c8;
+  --glow3:#c9b6ff;
+
+  --text:#f5f6ff;
+  --muted:#cfd2ff;
+
+  --gold:#f2c55a;
+  --red:#d84a5a;
+
+  --card:rgba(255,255,255,.08);
+  --stroke:rgba(255,255,255,.15);
+  --radius:18px;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Inter,system-ui;
+  color:var(--text);
+  background:
+    radial-gradient(900px 600px at 20% 10%, rgba(201,182,255,.35), transparent 60%),
+    radial-gradient(900px 600px at 75% 15%, rgba(255,207,179,.28), transparent 55%),
+    linear-gradient(180deg,var(--bg1),var(--bg0));
+}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 28px;
+}
+
+.brand{
+  display:flex;
+  gap:14px;
+  align-items:center;
+}
+
+.logo{
+  font-size:30px;
+}
+
+.name{
+  font-weight:800;
+  letter-spacing:.04em;
+}
+
+.tag{
+  font-size:13px;
+  color:var(--muted);
+}
+
+.wrap{
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
+}
+
+.card{
+  background:linear-gradient(180deg,rgba(255,255,255,.12),var(--card));
+  border:1px solid var(--stroke);
+  border-radius:var(--radius);
+  padding:26px;
+  backdrop-filter:blur(10px);
+}
+
+.hero h1{
+  font-size:42px;
+  margin:16px 0 10px;
+}
+
+.sub{
+  max-width:520px;
+  color:var(--muted);
+}
+
+.pill{
+  display:inline-flex;
+  gap:8px;
+  padding:6px 12px;
+  border-radius:999px;
+  border:1px solid var(--stroke);
+}
+
+.dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:var(--gold);
+}
+
+.btn{
+  padding:12px 18px;
+  border-radius:14px;
+  border:1px solid rgba(242,197,90,.35);
+  color:var(--text);
+  text-decoration:none;
+  font-weight:700;
+  background:linear-gradient(180deg,rgba(255,255,255,.15),rgba(255,255,255,.05));
+}
+
+.btn.ghost{
+  border-color:var(--stroke);
+}
+
+.actions{
+  margin-top:20px;
+  display:flex;
+  gap:12px;
+}
+
+.caBox{
+  margin-top:16px;
+}
+
+#copyCA{
+  width:100%;
+  margin-top:6px;
+  padding:14px;
+  border-radius:14px;
+  border:1px solid var(--stroke);
+  background:transparent;
+  color:var(--text);
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+  margin-top:40px;
+}
+
+.stat span{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.stat strong{
+  font-size:22px;
+}
+
+.hr{
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--stroke),transparent);
+  margin:30px 0;
+}
+
+footer{
+  text-align:center;
+  color:var(--muted);
+}
