@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>The Royal Jerk</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Crowned by accident. Unmoved by chaos." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">👑</div>
+    <div>
+      <div class="name">THE ROYAL JERK</div>
+      <div class="tag">Crowned by accident • Unmoved by chaos</div>
+    </div>
+  </div>
+
+  <nav>
+    <a class="btn ghost" href="#" id="xLink">X</a>
+    <a class="btn ghost" href="#" id="tgLink">Telegram</a>
+    <a class="btn" href="#" id="buyLink">Buy</a>
+  </nav>
+</header>
+
+<main class="wrap">
+
+<section class="hero card">
+  <div class="pill">
+    <span class="dot"></span>
+    <span id="statusText">Waiting for launch…</span>
+  </div>
+
+  <h1>Stay seated.<br><span class="muted">Let the world spiral.</span></h1>
+
+  <p class="sub">
+    The Royal Jerk is for those who don’t flinch.
+    When the cabin gets loud, we get quieter.
+  </p>
+
+  <div class="caBox">
+    <div class="caLabel">Contract Address</div>
+    <button id="copyCA" disabled>
+      <span id="caText">TBA</span>
+      <span class="copyHint">Copy</span>
+    </button>
+  </div>
+
+  <div class="actions">
+    <a class="btn" id="chartLink" href="#">Chart</a>
+    <a class="btn ghost" href="#stats">Live Stats</a>
+  </div>
+</section>
+
+<section id="stats" class="stats">
+  <div class="stat card">
+    <span>Price</span>
+    <strong id="price">—</strong>
+  </div>
+  <div class="stat card">
+    <span>Market Cap</span>
+    <strong id="mc">—</strong>
+  </div>
+  <div class="stat card">
+    <span>Liquidity</span>
+    <strong id="liq">—</strong>
+  </div>
+  <div class="stat card">
+    <span>24h Volume</span>
+    <strong id="vol">—</strong>
+  </div>
+</section>
+
+<footer>
+  <div class="hr"></div>
+  <p class="footerText">
+    No roadmap. No reaction. No explanation.
+  </p>
+</footer>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
